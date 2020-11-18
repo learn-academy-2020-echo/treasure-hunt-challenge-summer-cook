@@ -11,7 +11,12 @@ class App extends Component{
   }
 
 handleGamePlay = (index) => {
-  alert(index)
+  //this destructuring extracts squares from the state object, modifying it and then setting setting setting state
+  //you can't directly set the state
+  //you have to destructure the variable squares.
+  const { squares } = this.state
+  this.state.squares[index] = "🌵"
+  this.setState({ squares: squares })
 }
 
   render(){
