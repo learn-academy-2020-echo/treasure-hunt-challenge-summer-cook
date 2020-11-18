@@ -10,6 +10,10 @@ class App extends Component{
     }
   }
 
+handleGamePlay = (index) => {
+  alert(index)
+}
+
   render(){
     return(
       <React.Fragment>
@@ -21,6 +25,9 @@ class App extends Component{
             <Square
               value = { value }
               key= { index }
+              index= { index}
+              handleGamePlay= { this.handleGamePlay
+              }
             />
           )
         }) }
@@ -29,6 +36,7 @@ class App extends Component{
       </React.Fragment>
       //you have to add the key value pair inside the square component call in the render in order to refer to this.props.value and pull it into the square component
       //need to wrap ALL the square (and all the map logic) inside a div so that we can then style that div.
+      // for user story 2- you pass index into the map and add index into the square component call.
     )
   }
 }
