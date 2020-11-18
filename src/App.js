@@ -6,20 +6,35 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      squares: ["?", "?", "?", "?", "?", "?", "?", "?", "?"]
+      squares: ["?", "?", "?", "?", "?", "?", "?", "?", "?"],
+    //we need a place to store the treasure when we define it.
+      treasureLocation: null
     }
   }
+
+//this is a react lifecycle component. means it is defined by react, similar to Render or the Constructor.
+//this randomly
+componentDidMount(){
+  let treasure = Math.floor(Math.random() * this.state.squares.length)
+  this.setState({ treasureLocation: treasure })
+}
 
 handleGamePlay = (index) => {
   //this destructuring extracts squares from the state object, modifying it and then setting setting setting state
   //you can't directly set the state
   //you have to destructure the variable squares.
-  const { squares } = this.state
+  const { squares, treasureLocation } = this.state
+  if(index === treasureLocation){
+    squares[index] = "🌙"
+    this.setState({ squares: squares })
+  } else {
   this.state.squares[index] = "🌵"
   this.setState({ squares: squares })
+  }
 }
 
   render(){
+    console.log("treasureLocation:", this.state.treasureLocation)
     return(
       <React.Fragment>
       <center>
