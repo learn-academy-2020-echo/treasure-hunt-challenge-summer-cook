@@ -1,0 +1,30 @@
+* {
+  align-items: center;
+  font-family: Georgia;
+}
+h1 {
+  color: #4169e1;
+  font-size: 60px;
+}
+
+#square {
+  height: 150px;
+  width: 150px;
+  background-color: #4169e1;
+  border: 2px solid turquoise;
+  font-size: 120px;
+  text-align: center;
+  font-family: Georgia;
+  color: white;
+
+}
+
+#gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 480px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
